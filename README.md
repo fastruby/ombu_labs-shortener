@@ -1,22 +1,31 @@
 # OmbuLabs::Shortener
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ombu_labs/shortener`. To experiment with that code, run `bin/console` for an interactive prompt.
+A short script to shorten links for these domains:
 
-TODO: Delete this and the text above, and describe your gem
+- https://fastruby.io
+- https://ombulabs.com
 
 ## Installation
 
-Install the gem and add to the application's Gemfile by executing:
+Install the gem:
 
-    $ bundle add ombulabs-shortener
-
-If bundler is not being used to manage dependencies, install the gem by executing:
-
-    $ gem install ombulabs-shortener
+gem install ombu_labs-shortener
 
 ## Usage
 
-TODO: Write usage instructions here
+You will need to set up your API key in your environment:
+
+```
+export REBRANDLY_API_KEY=<your api key>
+```
+
+Then you can just call the `shorten` command:
+
+```
+shorten https://www.ombulabs.com\?utm_source\=pepe
+Shortening: https://www.ombulabs.com?utm_source=pepe
+Shortened: SHORT: go.ombulabs.com/oxh
+```
 
 ## Development
 
@@ -26,7 +35,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/ombulabs-shortener. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/ombulabs-shortener/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/fastruby/ombulabs-shortener. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/fastruby/ombulabs-shortener/blob/master/CODE_OF_CONDUCT.md).
 
 ## License
 
@@ -34,4 +43,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Ombulabs::Shortener project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/ombulabs-shortener/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the OmbuLabs::Shortener project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/fastruby/ombulabs-shortener/blob/master/CODE_OF_CONDUCT.md).
