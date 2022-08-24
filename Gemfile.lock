@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ombulabs-shortener (0.1.0)
+    ombu_labs-shortener (0.1.0)
       rebrandly
 
 GEM
@@ -38,7 +38,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
-  ombulabs-shortener!
+  ombu_labs-shortener!
   rake (~> 13.0)
   rspec (~> 3.0)
 

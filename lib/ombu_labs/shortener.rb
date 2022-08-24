@@ -18,7 +18,7 @@ module OmbuLabs
         puts "Shortening: #{@url}"
         domain = find_domain
         link = @api.shorten(@url, domain: domain.to_h)
-        puts "Shortened: SHORT: #{link.short_url}"
+        puts "Shortened: SHORT: https://#{link.short_url}"
 
       rescue Rebrandly::RebrandlyError => err
         puts "Error: #{err.message}"
