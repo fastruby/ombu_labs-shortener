@@ -16,7 +16,7 @@ class MyCLI
     return puts help if no_api_key?
     return puts invalid_uri if invalid_uri?(args)
 
-    OmbuLabs::Shortener::RebrandlyClient.new(args).shorten
+    OmbuLabs::Shortener::RebrandlyClient.new(args.first).shorten
   end
 
   def self.help

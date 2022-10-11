@@ -6,22 +6,43 @@ require_relative "shortener/version"
 module OmbuLabs
   module Shortener
     class RebrandlyClient
-      def initialize(args = [])
-        @url = args.first
+      
+      # You can initialize the client like this:
+      # 
+      # > OmbuLabs::Shortener::RebrandlyClient.new("https://example.com/ombu")
+      #
+      # @param args [String] A valid long URL  
+      def initialize(url)
+        @url = url
         Rebrandly.configure do |config|
           config.api_key = ENV['REBRANDLY_API_KEY']
         end
         @api = Rebrandly::Api.new
       end
 
+      # Shortens the URL and returns a short URL string. It will
+      # NOT raise an exception if there is a communication error with
+      # the Rebrandly API.
+      # 
+      # @return [String]
       def shorten
+        shorten!
+      rescue Rebrandly::RebrandlyError => err
+        puts "Error: #{err.message}"
+        @url
+      end
+
+      # Shortens the URL and returns a short URL string. It will
+      # raise an exception if there is a communication error with
+      # the Rebrandly API.
+      # 
+      # @return [String]
+      def shorten!
         puts "Shortening: #{@url}"
         domain = find_domain
         link = @api.shorten(@url, domain: domain.to_h)
         puts "Shortened: SHORT: https://#{link.short_url}"
-
-      rescue Rebrandly::RebrandlyError => err
-        puts "Error: #{err.message}"
+        link.short_url
       end
 
       private
