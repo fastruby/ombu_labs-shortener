@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ombu_labs-shortener (0.1.0)
+    ombu_labs-shortener (0.2.0)
       rebrandly
 
 GEM
